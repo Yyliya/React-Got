@@ -13,17 +13,19 @@ export default class GotService {
         return await res.json();
     }
 
-    getAllBooks() {
-        return this.getResource(`/books/`);
+    async getAllBooks() {
+        const res =  await this.getResource(`/books/`);
+        return res.map(this._transformBook)
     }
     
-    getBook(id) {
-        return this.getResource(`/books/${id}/`);
+    async getBook(id) {
+        const book = await this.getResource(`/books/${id}/`);
+        return this._transformBook(book)
     }
     
     async getAllCharacters() {
         const res = await this.getResource(`/characters?page=5&pageSize=10`);
-        return res.map(this._transformCharacter)
+        return res.map(this._transformCharacter.bind(this))
     }
     
     async getCharacter (id) {
@@ -31,21 +33,39 @@ export default class GotService {
         return this._transformCharacter(character)
     }
     
-    getAllHouses() {
-        return this.getResource(`/houses/`);
+    async getAllHouses() {
+        const res =  await this.getResource(`/houses/`);
+        return res.map(this._transformHouses)
     }
     
-    getHouse(id) {
-        return this.getResource(`/houses/${id}/`);
+    async getHouse(id) {
+        const house =  await this.getResource(`/houses/${id}/`);
+        return this._transformHouses(house)
+    }
+
+    isSet = (data) => {
+        if (data) {
+            return data
+        }else {
+            return 'no data'
+        }
+    } 
+
+    isCult = (cult) => {
+        if (cult) {
+            return cult
+        }else {
+            return 'unknown'
+        }
     }
 
     _transformCharacter(char) {
         return {
-            name: char.name,
-            gender: char.gender,
-            born: char.born,
-            died: char.died,
-            culture: char.culture
+            name: this.isSet(char.name), 
+            gender: this.isSet(char.gender),
+            born: this.isSet(char.born),           
+            died: this.isSet(char.died), 
+            culture: this.isCult(char.culture)
         }
     }
 
