@@ -37,9 +37,7 @@ class RandomBook extends Component {
     } 
 
     updateBook = () => {
-        const id = Math.floor(Math.random()*180 +70)//диапазон от 25-140
-        //const id = 13000000
-        this.gotService.getBook(id)
+        this.gotService.getBook()
             .then(this.onBookLoaded)
             .catch(this.onError)
     }

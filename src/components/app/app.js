@@ -75,7 +75,7 @@ class App extends Component  {
                         }>
                     </Route>
 
-                    <Route path='house' element={
+                    <Route exact path='/house' element={
                         <>
                         <Container>
                             <Header/>
@@ -95,7 +95,7 @@ class App extends Component  {
                         </>
                     }></Route>
 
-                    <Route path='book' element={
+                    <Route exact path='/book' element={
                         <>
                             <Container>
                                 <Header/>

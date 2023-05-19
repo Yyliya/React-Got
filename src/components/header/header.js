@@ -40,10 +40,10 @@ const Header = () => {
                     <Link to='/'>Characters</Link>
                 </li>
                 <li>
-                    <Link to='house'>Houses</Link>
+                    <Link to='/house'>Houses</Link>
                 </li>
                 <li>
-                    <Link to='book'>Books</Link>   
+                    <Link to='/book'>Books</Link>   
                 </li>
             </HeaderLinks>
         </HeaderBlock>

@@ -7,7 +7,7 @@ import ErrorMessage from '../../error/errorMessage'
 
 class BookPage extends Component {
     state = {
-        selectedBook: 130,
+        selectedBook: 1,
         error: false
 
     }
