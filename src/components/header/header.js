@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeaderBlock = styled.div`
     display: flex;
@@ -36,13 +37,13 @@ const Header = () => {
             </HeaderTitle>
             <HeaderLinks>
                 <li>
-                    <a href="#!">Characters</a>
+                    <Link to='/'>Characters</Link>
                 </li>
                 <li>
-                    <a href="#!">Houses</a>
+                    <Link to='house'>Houses</Link>
                 </li>
                 <li>
-                    <a href="#!">Books</a>   
+                    <Link to='book'>Books</Link>   
                 </li>
             </HeaderLinks>
         </HeaderBlock>

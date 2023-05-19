@@ -4,7 +4,7 @@ import gotService from '../../../services/gotService'
 import Spinner from '../../spinner'
 
 
-export default class CharList extends Component {
+class CharList extends Component {
 
     gotService = new gotService()
 
@@ -49,3 +49,5 @@ export default class CharList extends Component {
         );
     }
 }
+
+export default CharList

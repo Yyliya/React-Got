@@ -4,7 +4,7 @@ import gotService from '../../../services/gotService'
 import Spinner from '../../spinner'
 import ErrorMessage from '../../error/errorMessage'
 
-export default class RandomChar extends Component {
+class RandomChar extends Component {
     gotService = new gotService()
 
     state = {
@@ -35,13 +35,15 @@ export default class RandomChar extends Component {
             loading: false
         })
     } 
+
     updateChar = () => {
         const id = Math.floor(Math.random()*180 +70)//диапазон от 25-140
         //const id = 13000000
         this.gotService.getCharacter(id)
-        .then(this.onCharLoaded)
-        .catch(this.onError)
+            .then(this.onCharLoaded)
+            .catch(this.onError)
     }
+
     render() {
 
         const {char, loading, error} = this.state;
@@ -87,3 +89,5 @@ const View = ({char}) => {
         </>
     )
 }
+
+export default RandomChar

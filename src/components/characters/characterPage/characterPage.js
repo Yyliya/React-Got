@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
-import CharList from '../charList';
-import CharDetails from '../charDetails';
 import {Col, Row} from 'reactstrap';
+
+import CharList from '../charList/charList';
+import CharDetails from '../charDetails/charDetails'
 import ErrorMessage from '../../error/errorMessage'
 
-export default class CharacterPage extends Component {
+class CharacterPage extends Component {
     state = {
         selectedChar: 130,
         error: false
@@ -45,5 +46,5 @@ export default class CharacterPage extends Component {
     }
 }
 
-
+export default CharacterPage
 

@@ -4,7 +4,7 @@ import gotService from '../../../services/gotService'
 import Spinner from '../../spinner'
 import ErrorMessage from '../../error'
 
-export default class CharDetails extends Component {
+ class CharDetails extends Component {
 
     gotService = new gotService()
     state = {
@@ -99,3 +99,5 @@ export default class CharDetails extends Component {
         );
     }
 }
+
+export default CharDetails
